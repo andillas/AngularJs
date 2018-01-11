@@ -1,0 +1,11 @@
+
+input.ng-invalid {
+	background-color: #CC4444;
+	color: white;
+}
+.centrado{
+    text-align: center;
+}
+.letra_pequeña {
+    font-size: x-small;
+}

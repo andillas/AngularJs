@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch</title>
+
+    <script type="text/javascript" src="../assets_common/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../assets_common/js/angular.min.js"></script>
+    <script type="text/javascript" src="../assets_common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/switch.js"></script>
+    <link rel="stylesheet" href="../assets_common/css/bootstrap.min.css">
+</head>
+<body ng-app="switchApp" ng-controller="switchCtrl">
+<div class="container">
+    <div class="jumbotron">
+        <h3 ng-bind="title_app"></h3>
+    </div>
+    <div class="jumbotron">
+        <div class="radio">
+            <label><input type="radio" name="opt_numeros" ng-model="opt_selected" ng-disabled="is_disabled" value="uno">Uno</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="opt_numeros" ng-model="opt_selected" ng-disabled="is_disabled" value="dos">Dos</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="opt_numeros" ng-model="opt_selected" ng-disabled="is_disabled" value="tres">Tres</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="opt_numeros" ng-model="opt_selected" ng-disabled="is_disabled" value="cuatro">Cuatro</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" ng-model="is_disabled" ng-checked="is_disabled">Deshabilitar todos</label>
+        </div>
+
+        <div ng-switch on="opt_selected">
+            <p ng-switch-when="uno">Has seleccionado la menor de todas: {{opt_selected | uppercase}}</p>
+            <p ng-switch-when="dos">Has seleccionado la segunda menor de todas: {{opt_selected}}</p>
+            <p ng-switch-when="tres">Has seleccionado la segunda mayor de todas: {{opt_selected}}</p>
+            <p ng-switch-when="cuatro">Has seleccionado la mayor de todas: {{opt_selected}}</p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

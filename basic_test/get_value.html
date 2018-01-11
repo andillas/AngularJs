@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>basic example</title>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/js.js"></script>
+    <script src="app/controllers/pruecontroller2.js"></script>
+</head>
+<body>
+<!--<input type="text" ng-change="getInfoB(this.value)">-->
+<label for="containel" id="erlabel">read label</label>
+<div id="containel" ng-app="basicApp2" ng-controller="basicAppCtrl2">
+<div ng-init="inicia()">
+    <input type="text" ng-model="hola">
+    <div>{{counters}}</div>
+</div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>basic example</title>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/js.js"></script>
+    <script src="app/controllers/pruecontroller.js"></script>
+    <script src="app/controllers/pruecontroller2.js"></script>
+</head>
+<body>
+<!--<input type="text" ng-change="getInfoB(this.value)">-->
+<label for="containel" id="erlabel">registro</label>
+<div id="containel" ng-app="basicApp" ng-controller="basicAppCtrl">
+
+
+    <div ng-init="getInfo()">pincha</div>
+    <input type="text" placeholder="Membership Norr" ng-model="rrr">
+
+    <!--<ul ng-repeat="p in products track by $index">-->
+    <ul ng-repeat="p in products">
+        <li ng-cloak>{{p.name}}</li>
+        <li ng-cloak>{{p.description}}</li>
+    </ul>
+    <button ng-click="getValue()">get value</button>
+</div>
+
+
+
+<label for="containel2" id="erlabel2">read label</label>
+<div id="containel2" ng-app="basicApp2" ng-controller="basicAppCtrl2">
+<div ng-init="inicia()">
+    <input type="text" ng-model="hola">
+    <div>{{counters}}</div>
+</div>
+</div>
+</body>
+</html>

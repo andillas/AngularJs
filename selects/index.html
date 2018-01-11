@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing with selectors in AngularJs</title>
+    <script type="text/javascript" src="../assets_common/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../assets_common/js/angular.min.js"></script>
+    <script type="text/javascript" src="../assets_common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/selects.js"></script>
+    <link rel="stylesheet" href="../assets_common/css/bootstrap.min.css">
+</head>
+<body ng-app="selectsApp" ng-controller="selectsCtrl">
+<div class="container">
+    <div class="jumbotron">
+        <h3 ng-bind="h3title"></h3>
+        <form class="form-group">
+            <select>
+                <option ng-repeat="option in pueblos" ng-bind="option"></option>
+            </select>
+            <select ng-options="opt for opt in pueblos" ng-model="sel" ng-init="pueblos.unshift('Selecciona uno...')"></select>
+            <select multiple ng-options="opt for opt in pueblos" ng-model="sel"></select>
+        </form>
+        <p ng-bind="sel"></p>
+    </div>
+</div>
+</body>
+</html>

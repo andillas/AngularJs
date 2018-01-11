@@ -1,0 +1,19 @@
+<div class="list-group">
+        <a href="{{loc.url}}" class="list-group-item"
+           ng-repeat="loc in localidades | orderBy: 'prov'"
+           ng-class="{'disabled' : loc.locald == 'Parla'}"
+           target="_blank"
+        >{{loc.locald | uppercase}} ({{loc.prov}})
+            <button style="float: right" ng-disabled="testDisabled(loc.locald)">{{btnText(loc.locald)}}</button>
+            <button style="float: right" ng-disabled="testDisabled(loc.locald)">{{loc.locald === 'Parla' ? 'No mola' : 'Mola'}}</button>
+        </a>
+    <h4 ng-style="style_margin_top">Con button</h4>
+    <button class="list-group-item"
+            ng-repeat="loc in localidades"
+            ng-disabled="loc.locald === 'Lanjarón' || loc.locald === 'Parla'"
+            ng-class = "{disabled : loc.locald === 'Parla'}"
+            ng-click="popUpAlert(loc.prov)"
+    >
+        {{loc.locald | uppercase}} ({{loc.prov}})
+    </button>
+</div>

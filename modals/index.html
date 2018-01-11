@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modals testing</title>
+    <script src="../assets_common/js/jquery-2.2.4.min.js"></script>
+    <script src="../assets_common/js/angular.min.js"></script>
+    <script src="../assets_common/js/angular-sanitize.js"></script>
+    <script src="../assets_common/js/bootstrap.min.js"></script>
+    <script src="http://code.angularjs.org/snapshot/angular-animate.js"></script>
+    <link rel="stylesheet" href="../assets_common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets_common/css/common.css">
+</head>
+<body ng-app="modalsApp" ng-controller="modalsCtrl">
+<div class="container">
+    <div class="jumbotron">
+        <h3 ng-bind="h3_title"></h3>
+        <button ng-click="shModal_1(25)">Eliminar</button>
+        <button ng-click="shModal_2(32)">Actualizar</button>
+        <p ng-bind="resultConfirmModal"></p>
+    </div>
+    <div id="msgAlert" class="alert {{msg_alert_type}}" ng-hide="msg_alert_hide">
+        <strong>Resultado: </strong><span ng-bind-html="msg_alert_txt"></span>
+    </div>
+</div>
+
+<div id="confirmModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>{{modal_text}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="confirmResult(true)">Sí</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="confirmResult(false)">No</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="app/app.js"></script>
+</html>
